@@ -60,7 +60,7 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  margin: auto;
+  margin: 1rem auto auto auto;
   justify-items: stretch;
 }
 
@@ -189,6 +189,9 @@ form {
   cursor: pointer;
   color: var(--dark-green);
 }
+#people-input:invalid {
+  border: solid 0.2rem var(--error) !important;
+}
 
 input {
   border: none;
@@ -200,6 +203,13 @@ input {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-message {
+  color: var(--error);
+  margin-right: 0.6rem;
 }
 
 .flex-form {
