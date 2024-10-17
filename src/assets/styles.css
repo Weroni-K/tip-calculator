@@ -38,10 +38,6 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
-button {
-  cursor: pointer;
-}
-
 .header {
   display: flex;
   justify-content: center;
@@ -88,18 +84,22 @@ button {
   gap: 1rem;
 }
 
-.buttons-grid button {
-  background-color: var(--dark-green);
+button {
   border: none;
   border-radius: 5px;
-  color: var(--bright-grey);
-  height: 2.8rem;
-  width: 6.8rem;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 1.5rem;
   font-weight: 600;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.buttons-grid button {
+  background-color: var(--dark-green);
+  color: var(--bright-grey);
+  height: 2.8rem;
+  width: 6.8rem;
 }
 
 .buttons-grid button:hover {
@@ -109,27 +109,16 @@ button {
 
 .buttons-grid button:focus,
 .buttons-grid button:active,
-.buttons-grid .active {
+.buttons-grid .active,
+.reset-button:hover {
   background-color: var(--bright-green);
   color: var(--dark-green);
 }
 
 .reset-button {
   background-color: var(--disabled);
-  border: none;
-  border-radius: 5px;
   color: var(--dark-grey);
   height: 2.6rem;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.reset-button:hover {
-  background-color: var(--bright-green);
-  color: var(--dark-green);
 }
 
 form {
@@ -181,16 +170,26 @@ form {
 
 #bill-input:hover,
 #bill-input:focus,
-#people-input:hover,
-#people-input:focus,
+.input-valid:hover,
+.input-valid:focus,
 .short-input:hover,
 .short-input:focus {
   border: solid 0.2rem var(--bright-green) !important;
   cursor: pointer;
   color: var(--dark-green);
 }
-#people-input:invalid {
+
+.input-invalid,
+.input-invalid:hover,
+.input-invalid:focus {
   border: solid 0.2rem var(--error) !important;
+  cursor: pointer;
+  color: var(--dark-green);
+}
+
+.input-valid {
+  border: none;
+  background-color: var(--bright-grey);
 }
 
 input {
@@ -250,10 +249,12 @@ input {
   color: var(--disabled);
   font-size: 2.8rem;
 }
+
 .total-form label {
   color: var(--disabled);
   font-size: 1.5rem;
 }
+
 .total-form p {
   color: var(--bright-grey);
   font-size: 1rem;
@@ -296,13 +297,11 @@ input {
     margin-inline: 0;
     padding-inline: 1.5rem;
   }
-
   .content-right {
     width: 90%;
     margin-inline: 0;
     padding-inline: 1rem;
   }
-
   .buttons-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -311,7 +310,6 @@ input {
   .buttons-grid button {
     width: 7.8rem;
   }
-
   .short-input {
     width: 7.8rem;
   }
